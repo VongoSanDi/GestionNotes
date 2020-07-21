@@ -11,6 +11,7 @@ Vue.use(VueRouter)
     path: '/',
     name: 'Accueil',
     component: Accueil,
+    redirect: '/login'
   },
   {
     path: '/login',
@@ -28,14 +29,23 @@ Vue.use(VueRouter)
   
 ]
 
-router.beforeEach((to, from, next) => {
-
-})
-
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
+
+/*console.log("test1",router)
+let isAuthenticated = false;
+
+router.beforeEach((to, from, next) => {
+  if(isAuthenticated === false && to.fullPath !== '/login')
+  {
+    router.replace({name: 'Login'})
+    isAuthenticated = true;
+    next();
+  }
+})*/
+
 
 export default router

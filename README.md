@@ -1,4 +1,4 @@
-# gestion-notes
+# Gestion de notes
 
 ## Project setup
 ```
